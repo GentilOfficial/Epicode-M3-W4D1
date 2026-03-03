@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix (clone)</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/imgs/netflix.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+  </head>
+  <body>
+    <header
+      class="container-fluid px-md-5 py-2 d-flex align-items-center justify-content-between"
+    >
+      <div class="d-flex gap-2 gap-md-4 align-items-center me-3">
+        <div class="logo">
+          <img
+            class="img-fluid"
+            src="./assets/imgs/Netflix_Logo_RGB.png"
+            alt="Netflix logo"
+          />
+        </div>
+        <nav class="align-items-center">
+          <ul class="d-none d-md-flex gap-3 text-nowrap list-unstyled mb-0">
+            <li>
+              <a href="#" class="text-decoration-none">Home</a>
+            </li>
+            <li class="active">
+              <a href="#" class="text-decoration-none">TV Shows</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none">Movies</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none">Recently Added</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none">My List</a>
+            </li>
+          </ul>
+          <div class="btn-group d-block d-md-none">
+            <button
+              class="btn px-2 py-1 text-white border border-white dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span>Content</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" class="text-decoration-none dropdown-item">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none dropdown-item active"
+                  >TV Shows
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none dropdown-item">
+                  Movies
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none dropdown-item">
+                  Recently Added
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none dropdown-item">
+                  My List
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="d-flex align-items-center gap-3 text-white">
+        <i class="icon" data-lucide="search"></i>
+        <p class="m-0">KIDS</p>
+        <i class="icon" data-lucide="bell"></i>
+        <div class="d-flex gap-1 align-items-center dropdown-toggle">
+          <img
+            class="avatar"
+            src="./assets/imgs/avatar.png"
+            alt="User avatar"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main class="container-fluid px-md-5 py-1">
+      <section class="py-2 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-4">
+          <h1 class="text-white m-0">TV Shows</h1>
+          <div class="btn-group">
+            <button
+              class="btn px-2 py-1 btn-custom btn-sm dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="me-2">Genres</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item">Genre 1</li>
+              <li class="dropdown-item">Genre 2</li>
+              <li class="dropdown-item">Genre 3</li>
+              <li class="dropdown-item">Genre 4</li>
+              <li class="dropdown-item">Genre 5</li>
+            </ul>
+          </div>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn py-0 px-2 text-white active">
+            <i class="icon" data-lucide="text-align-start"></i>
+          </button>
+          <button type="button" class="btn py-0 px-2 text-white">
+            <i class="icon" data-lucide="layout-grid"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container-sm px-md-5 pt-3 pb-1">
+      <ul class="d-flex align-items-center gap-4 list-unstyled mb-4">
+        <li>
+          <a class="text-decoration-none" href="#">
+            <i class="icon-lg" data-lucide="facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a class="text-decoration-none" href="#">
+            <i class="icon-lg" data-lucide="instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a class="text-decoration-none" href="#">
+            <i class="icon-lg" data-lucide="twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a class="text-decoration-none" href="#">
+            <i class="icon-lg" data-lucide="youtube"></i>
+          </a>
+        </li>
+      </ul>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg">
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Audio and Subtitles</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Media Center</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Privacy</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Audio Description</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Investor Relations</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Legal Notices</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Help Center</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Jobs</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Cookie Preferences</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg">
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Gift Cards</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Terms of Use</a>
+            </li>
+            <li class="mb-3">
+              <a class="text-decoration-none" href="#">Corporate Information</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col">
+          <button class="btn" type="button">Service Code</button>
+        </div>
+      </div>
+      <div class="row">
+        <p class="my-1">&copy; 1997-2019 Netflix, Inc. {i-0a00a1bc23d4efg56}</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons()
+    </script>
+  </body>
+</html>

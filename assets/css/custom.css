@@ -1,0 +1,63 @@
+body {
+  background: #141414;
+  color: #808080;
+  font-family: "Google Sans", sans-serif;
+}
+
+.logo {
+  max-width: 5em;
+  max-height: auto;
+}
+
+li > a {
+  color: #808080;
+}
+
+li > a:hover {
+  transition: color 0.5s cubic-bezier(0.15, 0.75, 0.85, 1);
+  color: #ffffff;
+}
+
+li.active > a {
+  color: #ffffff;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+}
+
+.icon-sm {
+  width: 0.75em;
+  height: 0.75em;
+}
+
+.icon-lg {
+  width: 2em;
+  height: 2em;
+}
+
+.avatar {
+  max-width: 2em;
+  height: auto;
+}
+
+.btn {
+  color: #808080;
+  border-radius: 1px;
+  border: solid 1px #7f7f7f;
+}
+
+.btn:hover {
+  border-radius: 1px;
+  border: solid 1px #ffffff;
+}
+
+.btn-custom {
+  background: #000000;
+  color: #ffffff;
+}
+
+.btn-custom:hover {
+  background: #1b1b1b;
+}
