@@ -4,21 +4,21 @@ const carouselConfig = {
   type: "loop",
   drag: "free",
   snap: true,
-  gap: "0.25em",
+  gap: "0.15em",
   padding: { right: "3rem" },
   focus: 0,
   arrows: false,
   pagination: false,
-  perPage: 6,
+  fixedWidth: "22em",
   breakpoints: {
     576: {
-      perPage: 2,
+      fixedWidth: "12em",
     },
     768: {
-      perPage: 3,
+      fixedWidth: "16em",
     },
     992: {
-      perPage: 4,
+      fixedWidth: "16em",
     },
   },
 }
