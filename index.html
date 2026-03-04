@@ -21,11 +21,16 @@
       href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/custom.css" />
   </head>
+
   <body>
     <header
-      class="container-fluid px-md-5 py-2 d-flex align-items-center justify-content-between"
+      class="container-fluid px-md-5 py-3 d-flex align-items-center justify-content-between"
     >
       <div class="d-flex gap-2 gap-md-4 align-items-center me-3">
         <div class="logo">
@@ -105,8 +110,10 @@
       </div>
     </header>
 
-    <main class="container-fluid px-md-5 py-3 mb-5">
-      <section class="py-2 d-flex justify-content-between align-items-center">
+    <main class="ps-md-5 py-3 mb-5">
+      <section
+        class="animateFadeIn container-fluid d-flex justify-content-between align-items-center mb-4 pe-md-5"
+      >
         <div class="d-flex align-items-center gap-4">
           <h1 class="text-white m-0">TV Shows</h1>
           <div class="btn-group">
@@ -116,7 +123,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <span class="me-2">Genres</span>
+              <span class="me-3">Genres</span>
             </button>
             <ul class="dropdown-menu">
               <li class="dropdown-item">Genre 1</li>
@@ -136,10 +143,177 @@
           </button>
         </div>
       </section>
+      <section class="animateFadeIn container-fluid pe-0 mb-4">
+        <h2 class="h4 text-white">Trending Now</h2>
+        <div
+          class="splide"
+          id="trending-now-carousel"
+          aria-label="Trending Now"
+        >
+          <div class="splide__track py-2">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/1.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/2.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/3.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/4.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/5.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/6.png"
+                  alt="Movie"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="animateFadeIn container-fluid pe-0 mb-4">
+        <h2 class="h4 text-white">Watch It Again</h2>
+        <div
+          class="splide"
+          id="watch-it-again-carousel"
+          aria-label="Watch It Again"
+        >
+          <div class="splide__track py-2">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/7.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/8.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/9.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/10.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/11.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/12.png"
+                  alt="Movie"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="animateFadeIn container-fluid pe-0 mb-4">
+        <h2 class="h4 text-white">New Releases</h2>
+        <div
+          class="splide"
+          id="new-releases-carousel"
+          aria-label="New Releases"
+        >
+          <div class="splide__track py-2">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/13.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/14.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/15.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/16.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/17.png"
+                  alt="Movie"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid"
+                  src="./assets/imgs/movies/18.png"
+                  alt="Movie"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="container-sm px-md-5 py-5">
-      <ul class="d-flex align-items-center gap-4 list-unstyled mb-4">
+      <ul
+        class="animateFadeIn d-flex align-items-center gap-4 list-unstyled mb-4"
+      >
         <li>
           <a class="text-decoration-none" href="#">
             <i class="icon-lg" data-lucide="facebook"></i>
@@ -161,7 +335,7 @@
           </a>
         </li>
       </ul>
-      <div class="row">
+      <div class="animateFadeIn row">
         <div class="col-12 col-md-6 col-lg">
           <ul class="list-unstyled">
             <li class="mb-3">
@@ -218,12 +392,12 @@
           </ul>
         </div>
       </div>
-      <div class="row my-3">
+      <div class="animateFadeIn row my-3">
         <div class="col">
           <button class="btn" type="button">Service Code</button>
         </div>
       </div>
-      <div class="row">
+      <div class="animateFadeIn row">
         <p class="my-1">&copy; 1997-2019 Netflix, Inc. {i-0a00a1bc23d4efg56}</p>
       </div>
     </footer>
@@ -233,9 +407,8 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-      lucide.createIcons()
-    </script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
