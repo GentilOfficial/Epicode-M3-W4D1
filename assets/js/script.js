@@ -9,16 +9,13 @@ const carouselConfig = {
   focus: 0,
   arrows: false,
   pagination: false,
-  fixedWidth: "22em",
+  fixedWidth: "20em",
   breakpoints: {
     576: {
-      fixedWidth: "12em",
+      fixedWidth: "15em",
     },
     768: {
-      fixedWidth: "16em",
-    },
-    992: {
-      fixedWidth: "16em",
+      fixedWidth: "17em",
     },
   },
 }
@@ -34,17 +31,42 @@ trendingNowCarousel.mount()
 watchItAgainCarousel.mount()
 newReleasesCarousel.mount()
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("fadeIn")
-      observer.unobserve(entry.target)
+const fadeInObserver = new IntersectionObserver(
+  (elements, observer) => {
+    for (let el of elements) {
+      if (el.isIntersecting) {
+        el.target.classList.add("fadeIn")
+        observer.unobserve(el.target)
+      }
     }
-  })
-})
+  },
+  {
+    threshold: 0.2,
+  },
+)
 
-const elToAnimate = document.querySelectorAll(".animateFadeIn")
+const slideInViewObserver = new IntersectionObserver(
+  (elements) => {
+    for (let el of elements) {
+      if (el.isIntersecting) {
+        el.target.classList.add("in-view")
+      } else {
+        el.target.classList.remove("in-view")
+      }
+    }
+  },
+  {
+    threshold: 0.9,
+  },
+)
 
-for (let el of elToAnimate) {
-  observer.observe(el)
+const elToFadeIn = document.querySelectorAll(".animateFadeIn")
+const slidesToView = document.querySelectorAll(".splide__slide")
+
+for (let el of elToFadeIn) {
+  fadeInObserver.observe(el)
+}
+
+for (let slide of slidesToView) {
+  slideInViewObserver.observe(slide)
 }
