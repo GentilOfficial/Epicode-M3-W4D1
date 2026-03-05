@@ -9,7 +9,7 @@ const carouselConfig = {
   focus: 0,
   arrows: false,
   pagination: false,
-  fixedWidth: "20em",
+  fixedWidth: "22em",
   breakpoints: {
     576: {
       fixedWidth: "15em",
@@ -41,7 +41,7 @@ const fadeInObserver = new IntersectionObserver(
     }
   },
   {
-    threshold: 0.2,
+    threshold: 0.1,
   },
 )
 
