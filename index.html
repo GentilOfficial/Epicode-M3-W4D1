@@ -29,367 +29,384 @@
   </head>
 
   <body>
-    <header
-      class="container-fluid px-md-5 py-3 d-flex align-items-center justify-content-between"
+    <div
+      id="loading-preview"
+      class="position-absolute bg-black w-100 h-100 top-0 start-0 d-flex align-items-center justify-content-center"
     >
-      <div class="d-flex gap-2 gap-md-4 align-items-center me-3">
-        <div class="logo">
-          <img
-            class="img-fluid"
-            src="./assets/imgs/Netflix_Logo_RGB.png"
-            alt="Netflix logo"
-          />
-        </div>
-        <nav class="align-items-center">
-          <ul class="d-none d-md-flex gap-3 text-nowrap list-unstyled mb-0">
-            <li>
-              <a href="#" class="text-decoration-none">Home</a>
-            </li>
-            <li class="active">
-              <a href="#" class="text-decoration-none">TV Shows</a>
-            </li>
-            <li>
-              <a href="#" class="text-decoration-none">Movies</a>
-            </li>
-            <li>
-              <a href="#" class="text-decoration-none">Recently Added</a>
-            </li>
-            <li>
-              <a href="#" class="text-decoration-none">My List</a>
-            </li>
-          </ul>
-          <div class="btn-group d-block d-md-none">
-            <button
-              class="btn px-2 py-1 text-white border border-white dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <span>Content</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="#" class="text-decoration-none dropdown-item">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" class="text-decoration-none dropdown-item active"
-                  >TV Shows
-                </a>
-              </li>
-              <li>
-                <a href="#" class="text-decoration-none dropdown-item">
-                  Movies
-                </a>
-              </li>
-              <li>
-                <a href="#" class="text-decoration-none dropdown-item">
-                  Recently Added
-                </a>
-              </li>
-              <li>
-                <a href="#" class="text-decoration-none dropdown-item">
-                  My List
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <div class="d-flex align-items-center gap-3 text-white">
-        <i class="icon" data-lucide="search"></i>
-        <p class="m-0">KIDS</p>
-        <i class="icon" data-lucide="bell"></i>
-        <div class="d-flex gap-1 align-items-center dropdown-toggle">
-          <img
-            class="avatar"
-            src="./assets/imgs/avatar.png"
-            alt="User avatar"
-          />
+      <div class="mx-auto col-6 col-md-4 col-lg-2 d-flex flex-column">
+        <img
+          src="./assets/imgs/Netflix_Logo_RGB.png"
+          class="img-fluid"
+          alt="Netflix logo"
+        />
+        <div class="mx-auto">
+          <i data-lucide="loader-circle" class="spinner text-white icon-lg"></i>
         </div>
       </div>
-    </header>
+    </div>
 
-    <main class="ps-md-5 py-3 mb-5">
-      <section
-        class="container-fluid d-flex justify-content-between align-items-center mb-4 pe-md-5"
+    <div id="wrapper">
+      <header
+        class="container-fluid px-md-5 py-2 d-flex align-items-center justify-content-between"
       >
-        <div class="d-flex align-items-center gap-4">
-          <h1 class="text-white m-0">TV Shows</h1>
+        <div class="d-flex gap-2 gap-md-4 align-items-center me-3">
+          <div class="logo">
+            <img
+              class="img-fluid"
+              src="./assets/imgs/Netflix_Logo_RGB.png"
+              alt="Netflix logo"
+            />
+          </div>
+          <button
+            class="btn btn-sm px-2 py-1 text-white border border-white dropdown-toggle d-md-none"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            id="nav-menu-toggle"
+          >
+            <span>Content</span>
+          </button>
+          <nav class="btn-group">
+            <ul
+              class="dropdown-menu nav-menu d-md-flex align-items-center gap-3 border-0 shadow-none"
+            >
+              <li><a href="#" class="dropdown-item">Home</a></li>
+              <li><a href="#" class="dropdown-item active">TV Shows</a></li>
+              <li><a href="#" class="dropdown-item">Movies</a></li>
+              <li><a href="#" class="dropdown-item">Recently Added</a></li>
+              <li><a href="#" class="dropdown-item">My List</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="d-flex align-items-center gap-3 text-white">
+          <button class="btn p-0 border-0 text-white">
+            <i class="icon" data-lucide="search"></i>
+          </button>
+          <a href="#" class="text-decoration-none text-white">KIDS</a>
+          <button class="btn p-0 border-0 text-white">
+            <i class="icon" data-lucide="bell"></i>
+          </button>
+
           <div class="btn-group">
             <button
-              class="btn px-2 py-1 btn-custom btn-sm dropdown-toggle"
-              type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              class="btn p-0 border-0 d-flex gap-1 align-items-center dropdown-toggle text-white"
             >
-              <span class="me-3">Genres</span>
+              <img
+                class="avatar"
+                src="./assets/imgs/avatar.png"
+                alt="User avatar"
+              />
             </button>
             <ul class="dropdown-menu">
-              <li class="dropdown-item">Genre 1</li>
-              <li class="dropdown-item">Genre 2</li>
-              <li class="dropdown-item">Genre 3</li>
-              <li class="dropdown-item">Genre 4</li>
-              <li class="dropdown-item">Genre 5</li>
-            </ul>
-          </div>
-        </div>
-        <div class="btn-group" role="group">
-          <button type="button" class="btn py-0 px-2 text-white active">
-            <i class="icon" data-lucide="text-align-start"></i>
-          </button>
-          <button type="button" class="btn py-0 px-2 text-white">
-            <i class="icon" data-lucide="layout-grid"></i>
-          </button>
-        </div>
-      </section>
-      <section class="animateFadeIn container-fluid pe-0 mb-4">
-        <h2 class="h4 text-white">Trending Now</h2>
-        <div class="splide" id="trending-now-carousel">
-          <div class="splide__track py-2">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/1.png"
-                  alt="Movie"
-                />
+              <li>
+                <a href="#" class="text-decoration-none dropdown-item">
+                  Settings
+                </a>
               </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/2.png"
-                  alt="Movie"
-                />
+              <li>
+                <a href="#" class="text-decoration-none dropdown-item">
+                  Account
+                </a>
               </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/3.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/4.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/5.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/6.png"
-                  alt="Movie"
-                />
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a href="#" class="text-decoration-none dropdown-item">
+                  Sign Out
+                </a>
               </li>
             </ul>
           </div>
         </div>
-      </section>
-      <section class="animateFadeIn container-fluid pe-0 mb-4">
-        <h2 class="h4 text-white">Watch It Again</h2>
-        <div class="splide" id="watch-it-again-carousel">
-          <div class="splide__track py-2">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/7.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/8.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/9.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/10.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/11.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/12.png"
-                  alt="Movie"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="animateFadeIn container-fluid pe-0 mb-4">
-        <h2 class="h4 text-white">New Releases</h2>
-        <div class="splide" id="new-releases-carousel">
-          <div class="splide__track py-2">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/13.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/14.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/15.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/16.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/17.png"
-                  alt="Movie"
-                />
-              </li>
-              <li class="splide__slide">
-                <img
-                  class="img-fluid w-100"
-                  src="./assets/imgs/movies/18.png"
-                  alt="Movie"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
+      </header>
 
-    <footer class="container-sm px-md-5 py-3">
-      <ul
-        class="animateFadeIn d-flex align-items-center gap-4 list-unstyled mb-4"
-      >
-        <li>
-          <a class="text-decoration-none" href="#">
-            <i class="icon-lg" data-lucide="facebook"></i>
-          </a>
-        </li>
-        <li>
-          <a class="text-decoration-none" href="#">
-            <i class="icon-lg" data-lucide="instagram"></i>
-          </a>
-        </li>
-        <li>
-          <a class="text-decoration-none" href="#">
-            <i class="icon-lg" data-lucide="twitter"></i>
-          </a>
-        </li>
-        <li>
-          <a class="text-decoration-none" href="#">
-            <i class="icon-lg" data-lucide="youtube"></i>
-          </a>
-        </li>
-      </ul>
-      <div class="animateFadeIn row">
-        <div class="col-12 col-md-6 col-lg">
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Audio and Subtitles</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Media Center</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Privacy</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg">
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Audio Description</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Investor Relations</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Legal Notices</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg">
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Help Center</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Jobs</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Cookie Preferences</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg">
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Gift Cards</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Terms of Use</a>
-            </li>
-            <li class="mb-3">
-              <a class="text-decoration-none" href="#">Corporate Information</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="animateFadeIn row my-3">
-        <div class="col">
-          <button class="btn" type="button">Service Code</button>
-        </div>
-      </div>
-      <div class="animateFadeIn row">
-        <p class="my-1">&copy; 1997-2019 Netflix, Inc. {i-0a00a1bc23d4efg56}</p>
-      </div>
-    </footer>
+      <main class="ps-md-5 py-3 mb-5">
+        <section
+          class="container-fluid d-flex justify-content-between align-items-center mb-4 pe-md-5"
+        >
+          <div class="d-flex align-items-center gap-3 gap-md-5">
+            <h1 class="text-white m-0">TV Shows</h1>
+            <div class="btn-group">
+              <button
+                class="btn px-2 py-1 btn-custom btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="me-3">Genres</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">Genre 1</li>
+                <li class="dropdown-item">Genre 2</li>
+                <li class="dropdown-item">Genre 3</li>
+                <li class="dropdown-item">Genre 4</li>
+                <li class="dropdown-item">Genre 5</li>
+              </ul>
+            </div>
+          </div>
+          <div class="btn-group" role="group">
+            <button
+              type="button"
+              class="btn btn-sm px-3 py-1 text-white active"
+            >
+              <i class="icon" data-lucide="text-align-start"></i>
+            </button>
+            <button type="button" class="btn btn-sm px-3 py-1 text-white">
+              <i class="icon" data-lucide="layout-grid"></i>
+            </button>
+          </div>
+        </section>
+        <section class="animate-fade-in container-fluid pe-0 mb-5">
+          <h2 class="h3 text-white">Trending Now</h2>
+          <div class="splide" id="trending-now-carousel">
+            <div class="splide__track py-2">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/1.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/2.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/3.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/4.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/5.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/6.png"
+                    alt="Movie"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="animate-fade-in container-fluid pe-0 mb-5">
+          <h2 class="h3 text-white">Watch It Again</h2>
+          <div class="splide" id="watch-it-again-carousel">
+            <div class="splide__track py-2">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/7.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/8.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/9.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/10.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/11.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/12.png"
+                    alt="Movie"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="animate-fade-in container-fluid pe-0 mb-5">
+          <h2 class="h3 text-white">New Releases</h2>
+          <div class="splide" id="new-releases-carousel">
+            <div class="splide__track py-2">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/13.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/14.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/15.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/16.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/17.png"
+                    alt="Movie"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    class="img-fluid w-100"
+                    src="./assets/imgs/movies/18.png"
+                    alt="Movie"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
 
+      <footer class="container-sm px-md-5 py-4">
+        <ul
+          class="animate-fade-in d-flex align-items-center gap-4 list-unstyled mb-4"
+        >
+          <li>
+            <a class="text-decoration-none" href="#">
+              <i class="icon-lg" data-lucide="facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="text-decoration-none" href="#">
+              <i class="icon-lg" data-lucide="instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a class="text-decoration-none" href="#">
+              <i class="icon-lg" data-lucide="twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="text-decoration-none" href="#">
+              <i class="icon-lg" data-lucide="youtube"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="animate-fade-in row">
+          <div class="col-12 col-md-6 col-lg">
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Audio and Subtitles</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Media Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Privacy</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 col-lg">
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Audio Description</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Investor Relations</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Legal Notices</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 col-lg">
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Help Center</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Jobs</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Cookie Preferences</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 col-lg">
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Gift Cards</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#">Terms of Use</a>
+              </li>
+              <li class="mb-3">
+                <a class="text-decoration-none" href="#"
+                  >Corporate Information</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="animate-fade-in row my-3">
+          <div class="col">
+            <button class="btn" type="button">Service Code</button>
+          </div>
+        </div>
+        <div class="animate-fade-in row">
+          <p class="my-1">
+            &copy; 1997-2019 Netflix, Inc. {i-0a00a1bc23d4efg56}
+          </p>
+        </div>
+      </footer>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

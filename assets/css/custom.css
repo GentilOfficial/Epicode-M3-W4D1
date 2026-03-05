@@ -4,11 +4,6 @@ body {
   font-family: "Google Sans", sans-serif;
 }
 
-.logo {
-  max-width: 7em;
-  max-height: auto;
-}
-
 li > a {
   color: #808080;
 }
@@ -18,28 +13,24 @@ li > a:hover {
   color: #ffffff;
 }
 
-li.active > a {
-  color: #ffffff;
-}
-
-.icon {
-  width: 1em;
-  height: 1em;
-}
-
-.icon-sm {
-  width: 0.75em;
-  height: 0.75em;
-}
-
-.icon-lg {
-  width: 1.5em;
-  height: 1.5em;
+.logo {
+  max-width: 7em;
+  max-height: auto;
 }
 
 .avatar {
   max-width: 2em;
   height: auto;
+}
+
+.icon {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.icon-lg {
+  width: 2em;
+  height: 2em;
 }
 
 .btn {
@@ -49,6 +40,7 @@ li.active > a {
 }
 
 .btn:hover {
+  color: #ffffff;
   border-radius: 1px;
   border: solid 1px #ffffff;
 }
@@ -62,36 +54,113 @@ li.active > a {
   background: #1b1b1b;
 }
 
-.splide__slide > img {
+.splide__slide {
   opacity: 0.4;
   transition:
-    transform 0.5s,
-    opacity 0.3s;
+    transform 0.3s cubic-bezier(0.25, 0.75, 0.5, 1),
+    opacity 0.5s cubic-bezier(0.15, 0.75, 0.85, 1);
 }
 
-.splide__slide.in-view > img,
-.splide__slide:hover > img {
+.splide__slide.is-visible {
   opacity: 1;
 }
 
 .splide__slide:hover {
-  z-index: 1;
   cursor: pointer;
 }
 
-.splide__slide:hover > img {
+.splide__slide.is-visible:hover {
+  z-index: 1;
   transform: scale(1.05);
 }
 
-.animateFadeIn {
+.splide__slide.is-visible:active {
+  transform: scale(0.95);
+}
+
+.animate-fade-in {
   filter: blur(5px);
   opacity: 0;
   transform: translateY(20px);
-  transition: all 1s cubic-bezier(0.25, 0.75, 0.5, 1);
+  transition:
+    filter 0.75s cubic-bezier(0.25, 0.75, 0.5, 1),
+    opacity 1s cubic-bezier(0.15, 0.75, 0.85, 1),
+    transform 0.5s cubic-bezier(0.25, 0.75, 0.5, 1);
 }
 
-.fadeIn {
+.fade-in {
   filter: blur(0);
   opacity: 1;
   transform: translateY(0);
+}
+
+.dropdown-menu {
+  border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+  .nav-menu {
+    background: transparent;
+    position: static;
+  }
+
+  .nav-menu .dropdown-item {
+    color: #808080;
+    padding: 0;
+  }
+
+  .nav-menu .dropdown-item:hover,
+  .nav-menu .dropdown-item:focus {
+    background: none;
+    color: #ffffff;
+  }
+
+  .nav-menu .dropdown-item.active {
+    background: none;
+    color: #ffffff;
+  }
+}
+
+#loading-preview {
+  animation: hide-loader 2s forwards;
+}
+
+.spinner {
+  animation: spin 1s infinite;
+}
+
+#wrapper {
+  display: none;
+  opacity: 0;
+  filter: blur(5px);
+  animation: show-wrapper 1s forwards;
+}
+
+#wrapper.show {
+  display: block;
+}
+
+@keyframes hide-loader {
+  90% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(5px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes show-wrapper {
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
 }

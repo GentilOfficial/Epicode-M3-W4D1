@@ -1,41 +1,32 @@
 lucide.createIcons()
 
-const carouselConfig = {
-  type: "loop",
-  drag: "free",
-  snap: true,
-  gap: "0.15em",
-  padding: { right: "3rem" },
-  focus: 0,
-  arrows: false,
-  pagination: false,
-  fixedWidth: "22em",
-  breakpoints: {
-    576: {
-      fixedWidth: "15em",
+function initializeCarousel(id) {
+  new Splide(id, {
+    type: "loop",
+    drag: "free",
+    snap: true,
+    gap: "0.15em",
+    padding: { right: "3rem" },
+    focus: 0,
+    arrows: false,
+    pagination: false,
+    fixedWidth: "22em",
+    breakpoints: {
+      576: {
+        fixedWidth: "15em",
+      },
+      768: {
+        fixedWidth: "17em",
+      },
     },
-    768: {
-      fixedWidth: "17em",
-    },
-  },
+  }).mount()
 }
-
-const trendingNowCarousel = new Splide("#trending-now-carousel", carouselConfig)
-const watchItAgainCarousel = new Splide(
-  "#watch-it-again-carousel",
-  carouselConfig,
-)
-const newReleasesCarousel = new Splide("#new-releases-carousel", carouselConfig)
-
-trendingNowCarousel.mount()
-watchItAgainCarousel.mount()
-newReleasesCarousel.mount()
 
 const fadeInObserver = new IntersectionObserver(
   (elements, observer) => {
     for (let el of elements) {
       if (el.isIntersecting) {
-        el.target.classList.add("fadeIn")
+        el.target.classList.add("fade-in")
         observer.unobserve(el.target)
       }
     }
@@ -49,24 +40,43 @@ const slideInViewObserver = new IntersectionObserver(
   (elements) => {
     for (let el of elements) {
       if (el.isIntersecting) {
-        el.target.classList.add("in-view")
-      } else {
-        el.target.classList.remove("in-view")
+        el.target.classList.add("is-visible")
       }
     }
   },
   {
-    threshold: 0.9,
+    threshold: 1,
   },
 )
 
-const elToFadeIn = document.querySelectorAll(".animateFadeIn")
-const slidesToView = document.querySelectorAll(".splide__slide")
+function loadWrapper() {
+  const wrapper = document.getElementById("wrapper")
+  wrapper.classList.add("show")
 
-for (let el of elToFadeIn) {
-  fadeInObserver.observe(el)
+  initializeCarousel("#trending-now-carousel")
+  initializeCarousel("#watch-it-again-carousel")
+  initializeCarousel("#new-releases-carousel")
+
+  const elToFadeIn = document.querySelectorAll(".animate-fade-in")
+  const slidesToView = document.querySelectorAll(".splide__slide")
+
+  for (let el of elToFadeIn) {
+    fadeInObserver.observe(el)
+  }
+
+  for (let slide of slidesToView) {
+    slideInViewObserver.observe(slide)
+  }
 }
 
-for (let slide of slidesToView) {
-  slideInViewObserver.observe(slide)
-}
+window.addEventListener("load", () => {
+  setTimeout(loadWrapper, 2000)
+})
+
+window.matchMedia("(min-width: 768px)").addEventListener("change", () => {
+  const toggle = document.getElementById("nav-menu-toggle")
+  const dropdown = bootstrap.Dropdown.getInstance(toggle)
+  if (dropdown) {
+    dropdown.hide()
+  }
+})
